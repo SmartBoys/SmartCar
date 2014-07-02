@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zjlh.remotecar"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="18" />
+    
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:name="config.CarApplication"
+        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        <activity
+            android:name="activity.MainActivity"
+            android:screenOrientation="landscape"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="activity.PagerSelectorActivity"
+            android:screenOrientation="landscape"/>
+        
+        <activity android:name="activity.HelpActivity"
+            android:screenOrientation="landscape"/>
+        
+        <activity android:name="activity.MoveBallActivity"
+            android:screenOrientation="portrait"/>
+        
+        <activity android:name="activity.UseArrowsActivity"
+            android:screenOrientation="landscape"/>
+        
+        <activity android:name="activity.UseGsensorActivity"
+            android:screenOrientation="landscape"/>
+        
+        <activity android:name="activity.NavigationActivity"
+            android:screenOrientation="landscape"/>
+        
+        <service android:name="bluetooth.BluetoothLeService" android:enabled="true"/>
+    </application>
+
+</manifest>

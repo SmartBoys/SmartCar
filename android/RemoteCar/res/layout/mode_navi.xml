@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_navi1" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mViewPager"
+        android:layout_width="352.0dip"
+        android:layout_height="188.0dip"
+        android:overScrollMode="never"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/imgbt_back"
+        android:layout_width="80.0dip"
+        android:layout_height="65.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5.0dip"
+        android:background="@drawable/buttonss"
+        android:text="@string/back"
+        android:textSize="25.0dip"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/imgbt_confirm"
+        android:layout_width="80.0dip"
+        android:layout_height="65.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5.0dip"
+        android:background="@drawable/buttonss"
+        android:text="@string/confirm"
+        android:textSize="25.0dip"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+</RelativeLayout>

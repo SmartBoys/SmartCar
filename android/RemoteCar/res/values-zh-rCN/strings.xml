@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="connected">已连接</string>
+    <string name="disconnected">已断开连接</string>
+    <string name="error_bluetooth_not_supported">不支持蓝牙</string>
+    <string name="ble_not_supported">不支持蓝牙4.0</string>
+    <string name="mode1">模式一:</string>
+    <string name="mode2">模式二:</string>
+    <string name="mode3">模式三:</string>
+    <string name="mode1_title">滚球</string>
+    <string name="mode2_title">键盘</string>
+    <string name="mode3_title">重力感应</string>
+    <string name="moveball">移动滚球控制方向</string>
+    <string name="user_arrows">按键控制方向</string>
+    <string name="tiltdevice">倾斜设备控制方向</string>
+    <string name="kind1">类型一:</string>
+    <string name="kind2">类型二:</string>
+    <string name="kind3">类型三:</string>
+    <string name="kind1_title">N-字型</string>
+    <string name="kind2_title">前后</string>
+    <string name="kind3_title">矩形</string>
+    <string name="movestate">按N字型自动行驶一次</string>
+    <string name="userstate">按前后自动行驶一次</string>
+    <string name="tiltstate">按矩形自动行驶一圈</string>
+    <string name="back">返回</string>
+    <string name="confirm">确认</string>
+    <string name="start">开始</string>
+    <string name="stop">停止</string>
+    <string name="mode">模式</string>
+    <string name="navi">导航</string>
+    <string name="help_tile">帮助</string>
+    <string name="search_car">搜索Phone飞车……</string>
+    <string name="retry">重试</string>
+    <string name="authorize_failed_restart">连接失败，请重启Phone飞车……</string>
+    <string name="connecting">正在连接……</string>
+    <string name="connecting_car">正在连接Phone飞车……</string>
+    <string name="wifi_failed">Wifi 连接失败</string>
+    <string name="wifi_disconnected">Wifi 断开</string>
+    <string name="app_name">遥控小车</string>
+    <string name="choose_wifi">请选择您的Phone飞车</string>
+    <string name="error">错误, 请重试！</string>
+    <string name="move_ball">移动滚球控制方向</string>
+    <string name="control_speed">前后倾斜控制速度</string>
+    <string name="help_prom">连接失败的原因及解决方法:</string>
+    <string name="help_content">"
+1)  检查电量是否有充足。
+
+2)  有效控制范围在20米以内。
+
+3)  重复开始的步骤: 
+
+    a)  关闭车的电源，等待30秒后再重新打开；
+
+    b)  打开应用程序。"</string>
+    <string name="help">常见问题:</string>
+    <string name="tilt_tips1">重力感应控制方向</string>
+    <string name="tilt_tips2">倾斜向前、向后、向左、向右</string>
+</resources>

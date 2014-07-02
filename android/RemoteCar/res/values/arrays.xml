@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_titles">
+        <item>Beginner</item>
+        <item>Touch</item>
+        <item>Motion Sensor</item>
+    </string-array>
+    <string-array name="all_mode">
+        <item>MODE 1:</item>
+        <item>MODE 2:</item>
+        <item>MODE 3:</item>
+    </string-array>
+    <string-array name="navi_titles">
+        <item>N-SHAPED</item>
+        <item>BACK、FORTH</item>
+        <item>RECTANGLE</item>
+    </string-array>
+    <string-array name="all_type">
+        <item>TYPE 1:</item>
+        <item>TYPE 2:</item>
+        <item>TYPE 3:</item>
+    </string-array>
+</resources>

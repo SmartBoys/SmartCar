@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <view.TouchBallView
+        android:id="@+id/ball_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true" />
+
+    <ImageView
+        android:id="@+id/img_power"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginTop="5.0dip"
+        android:src="@drawable/power3" />
+
+    <TextView
+        android:id="@+id/txt_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:layout_marginTop="30.0dip" />
+
+    <Button
+        android:id="@+id/button_moveControl_back"
+        android:layout_width="100.0dip"
+        android:layout_height="65.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttonss"
+        android:text="@string/back"
+        android:textSize="20.0dip"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_tip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_moveControl_back"
+        android:layout_marginBottom="50.0dip"
+        android:gravity="center_horizontal"
+        android:text="@string/move_ball"
+        android:textColor="@color/white"
+        android:textSize="20.0dip" />
+
+</RelativeLayout>

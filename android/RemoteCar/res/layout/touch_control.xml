@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/img_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/control_bg" />
+
+    <ImageView
+        android:id="@+id/img_wheel"
+        android:layout_width="220.0dip"
+        android:layout_height="220.0dip"
+        android:layout_centerInParent="true"
+        android:src="@drawable/wheelarrows" />
+    
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/img_wheel"
+        android:layout_marginTop="22dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttonss"
+        android:textColor="@color/white"
+        android:text="@string/stop"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/img_power"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginTop="5.0dip"
+        android:src="@drawable/power3" />
+
+    <TextView
+        android:id="@+id/txt_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/imbt_touch_back"
+        android:layout_width="60.0dip"
+        android:layout_height="43.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttonss"
+        android:textColor="@color/white"
+        android:text="@string/back"
+        android:textSize="16.0dip"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20.0dip"
+        android:layout_toLeftOf="@+id/img_wheel"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/imgbt_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/forward" />
+
+        <ImageButton
+            android:id="@+id/imgbt_backward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:background="@android:color/transparent"
+            android:src="@drawable/back" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20.0dip"
+        android:layout_toRightOf="@+id/img_wheel"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/imgbt_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/left" />
+
+        <ImageButton
+            android:id="@+id/imgbt_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/right" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imbt_touch_back"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="30.0dip"
+        android:gravity="center_horizontal"
+        android:text="@string/control_speed"
+        android:textColor="@color/white"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+</RelativeLayout>

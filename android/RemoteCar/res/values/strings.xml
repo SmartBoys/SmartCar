@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="error_bluetooth_not_supported">Bluetooth not supported.</string>
+    <string name="ble_not_supported">BLE is not supported</string>
+    <string name="back">BACK</string>
+    <string name="confirm">OK</string>
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
+    <string name="mode">MODE</string>
+    <string name="navi">NAVIGATION</string>
+    <string name="help_tile">HELP</string>
+    <string name="moveball">Move the Rolling Ball</string>
+    <string name="user_arrows">Use Arrows</string>
+    <string name="tiltdevice">Tilt Your Device</string>
+    <string name="movestate">"According to the N word do
+automatic running again"</string>
+    <string name="userstate">"According to an automatic
+running before and after"</string>
+    <string name="tiltstate">"According to the rectangular
+automatic driven a circle"</string>
+    <string name="search_car">Searching car…</string>
+    <string name="retry">Retry</string>
+    <string name="authorize_failed_restart">To control the car, please restart it…</string>
+    <string name="connecting">"Connecting "</string>
+    <string name="connecting_car">Connecting car…</string>
+    <string name="wifi_failed">Wifi connected failed</string>
+    <string name="wifi_disconnected">Wifi disconnected</string>
+    <string name="app_name">RemoteCar</string>
+    <string name="choose_wifi">Please select your car</string>
+    <string name="error">Error, please try again later</string>
+    <string name="move_ball">Move the Rolling Ball</string>
+    <string name="control_speed">Tilt to control the speed</string>
+    <string name="help_prom">Problem: Connecting failed Solution:</string>
+    <string name="help_content">"
+1)  Check whether or not the battery is fully charged. If you see the battery  indicator is flashing, then recharge the battery.
+ 
+2)  You must operate the car within the 20-meter range.
+
+3)  Repeat the startup process:
+    a)  Power off the car, please wait 30 seconds, then turn on the car.
+    b)  Start the ANiAPP application."</string>
+    <string name="help">Troubleshooting questions</string>
+    <string name="tilt_tips1">Accelerometer Controlled Interface</string>
+    <string name="tilt_tips2">Tilt forward, backward, left, right</string>
+</resources>

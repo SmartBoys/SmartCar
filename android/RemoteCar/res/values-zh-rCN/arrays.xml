@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mode_titles">
+        <item>滚球</item>
+        <item>键盘</item>
+        <item>重力感应</item>
+    </string-array>
+    <string-array name="all_mode">
+        <item>模式一:</item>
+        <item>模式二:</item>
+        <item>模式三:</item>
+    </string-array>
+    <string-array name="navi_titles">
+        <item>N-字型</item>
+        <item>前后</item>
+        <item>矩形</item>
+    </string-array>
+    <string-array name="all_type">
+        <item>类型一:</item>
+        <item>类型二:</item>
+        <item>类型三:</item>
+    </string-array>
+</resources>
