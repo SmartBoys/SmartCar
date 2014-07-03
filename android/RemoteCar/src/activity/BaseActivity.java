@@ -175,9 +175,9 @@ public class BaseActivity extends Activity {
                 updateConnectionState(R.string.connected);
             } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action)) {
                 updateConnectionState(R.string.disconnected);
-//                clearUI();TODO
                 mReadCharacteristic = null;
                 mWriteCharacteristic = null;
+                connectStateChanged(false);
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action)) {
                 // Show all the supported services and characteristics on the user interface.
                 displayGattServices(mBluetoothLeService.getSupportedGattServices());
@@ -187,6 +187,9 @@ public class BaseActivity extends Activity {
         }
     };
 
+    protected void connectStateChanged(boolean connected) {
+    }
+    
     public boolean writeCharacteristic(String cmd) {
     	if (mWriteCharacteristic != null) {
 	    	mWriteCharacteristic.setValue(cmd);
@@ -237,6 +240,7 @@ public class BaseActivity extends Activity {
         				mReadCharacteristic = gattCharacteristic;
         			} else if (gattCharacteristic.getUuid().toString().equalsIgnoreCase(SampleGattAttributes.WRITE_UUID)) {
         				mWriteCharacteristic = gattCharacteristic;
+        				connectStateChanged(true);
         			}
         		}
         		return;

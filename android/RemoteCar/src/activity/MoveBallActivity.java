@@ -3,6 +3,7 @@ package activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import bluetooth.Cmd;
 import com.zjlh.remotecar.R;
 
@@ -10,6 +11,7 @@ public class MoveBallActivity extends BaseActivity implements View.OnClickListen
 	private boolean lightOn;
 	private boolean flashLightOn;
 	private Button btnLight, btnFlashLight;
+	private TextView txt_status;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,19 @@ public class MoveBallActivity extends BaseActivity implements View.OnClickListen
 		btnLight = (Button) findViewById(R.id.btnLight);
 		btnLight.setOnClickListener(this);;
 		btnFlashLight = (Button) findViewById(R.id.btnFlashLight);
-		btnFlashLight.setOnClickListener(this);;
+		btnFlashLight.setOnClickListener(this);
+		
+		txt_status = (TextView) findViewById(R.id.txt_status);
+		txt_status.setText("未连接");
+	}
+	
+	@Override
+	protected void connectStateChanged(boolean connected) {
+		if (connected) {
+			txt_status.setText("已连接");
+		} else {
+			txt_status.setText("未连接");
+		}
 	}
 	
 	@Override

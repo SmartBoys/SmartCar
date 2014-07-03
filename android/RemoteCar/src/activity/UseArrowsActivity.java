@@ -33,6 +33,16 @@ public class UseArrowsActivity extends BaseActivity implements View.OnClickListe
 		imgbt_right.setOnClickListener(this);
 		
 		txt_status = (TextView) findViewById(R.id.txt_status);
+		txt_status.setText("未连接");
+	}
+	
+	@Override
+	protected void connectStateChanged(boolean connected) {
+		if (connected) {
+			txt_status.setText("已连接");
+		} else {
+			txt_status.setText("未连接");
+		}
 	}
 
 	@Override
