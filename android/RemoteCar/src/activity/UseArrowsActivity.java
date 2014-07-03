@@ -55,12 +55,20 @@ public class UseArrowsActivity extends BaseActivity implements View.OnClickListe
 			break;
 			
 		case R.id.imgbt_left:
-			writeCharacteristic(Cmd.LEFT);
+			writeCharacteristic(Cmd.FORWARD_LEFT);
 			break;
 			
 		case R.id.imgbt_right:
-			writeCharacteristic(Cmd.RIGHT);
+			writeCharacteristic(Cmd.FORWARD_RIGHT);
 			break;
+		}
+	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		if (mWriteCharacteristic != null) {
+			writeCharacteristic(Cmd.STOP);
 		}
 	}
 }

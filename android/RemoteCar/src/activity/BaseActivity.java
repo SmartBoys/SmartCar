@@ -26,7 +26,7 @@ public class BaseActivity extends Activity {
 	private static final int REQUEST_ENABLE_BT = 1;
 	private static final long SCAN_PERIOD = 10000;
 	protected BluetoothAdapter mBluetoothAdapter;
-	protected Handler mHandler = new Handler();
+	public Handler mHandler = new Handler();
 	protected String mBeaconMac;
 	protected BluetoothLeService mBluetoothLeService;
 	protected BluetoothGattCharacteristic mReadCharacteristic, mWriteCharacteristic;
@@ -58,13 +58,13 @@ public class BaseActivity extends Activity {
         // Ensures Bluetooth is enabled on the device.  If Bluetooth is not currently enabled,
         // fire an intent to display a dialog asking the user to grant permission to enable it.
         if (!mBluetoothAdapter.isEnabled()) {
-            if (!mBluetoothAdapter.isEnabled()) {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-            }
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
         }
 
-        scanLeDevice(true);
+        if (mBluetoothAdapter.isEnabled()) {
+        	scanLeDevice(true);
+        }
         
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter());
         if (mBluetoothLeService != null) {
@@ -76,7 +76,9 @@ public class BaseActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		scanLeDevice(false);
+		if (mBluetoothAdapter.isEnabled()) {
+			scanLeDevice(false);
+		}
 		unregisterReceiver(mGattUpdateReceiver);
 	}
 
@@ -105,15 +107,18 @@ public class BaseActivity extends Activity {
 
     private void scanLeDevice(final boolean enable) {
         if (enable) {
-            // Stops scanning after a pre-defined scan period.
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    mBluetoothAdapter.stopLeScan(mLeScanCallback);
-                }
-            }, SCAN_PERIOD);
-
-            mBluetoothAdapter.startLeScan(mLeScanCallback);
+        	if (System.currentTimeMillis() - scanStartTime > SCAN_PERIOD / 2) {
+	            // Stops scanning after a pre-defined scan period.
+	            mHandler.postDelayed(new Runnable() {
+	                @Override
+	                public void run() {
+	                    mBluetoothAdapter.stopLeScan(mLeScanCallback);
+	                }
+	            }, SCAN_PERIOD);
+	
+	            scanStartTime = System.currentTimeMillis();
+	            mBluetoothAdapter.startLeScan(mLeScanCallback);
+        	}
         } else {
             mBluetoothAdapter.stopLeScan(mLeScanCallback);
         }
@@ -128,6 +133,10 @@ public class BaseActivity extends Activity {
             	mBeaconMac = device.getAddress();
             	mBluetoothAdapter.stopLeScan(mLeScanCallback);
             	Intent gattServiceIntent = new Intent(BaseActivity.this, BluetoothLeService.class);
+            	if (mBluetoothLeService != null) {
+        			unbindService(mServiceConnection);
+        			mBluetoothLeService = null;
+        		}
                 bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);
             }
         }
@@ -182,13 +191,17 @@ public class BaseActivity extends Activity {
     	if (mWriteCharacteristic != null) {
 	    	mWriteCharacteristic.setValue(cmd);
 	        boolean res = mBluetoothLeService.writeCharacteristic(mWriteCharacteristic);
-	        System.out.println("res.....=" + res);
 	        return res;
     	} else {
     		Toast.makeText(this, R.string.disconnected, Toast.LENGTH_SHORT).show();
+    		if (mBluetoothAdapter.isEnabled()) {
+            	scanLeDevice(true);
+            }
     		return false;
     	}
     }
+    
+    private long scanStartTime;
 
     @Override
 	protected void onDestroy() {

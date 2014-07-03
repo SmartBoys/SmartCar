@@ -58,14 +58,22 @@ public class TouchBallView extends SurfaceView implements SurfaceHolder.Callback
 	
 	private void calcDirection(double angle)
 	{
-		if (angle >= 45 && angle < 135) {
+		if (angle >= 22.5 && angle < 67.5) {
+			actionCmd(Cmd.FORWARD_RIGHT);
+		} else if (angle >= 67.5 && angle < 112.5) {
 			actionCmd(Cmd.FORWARD);
-		} else if (angle >= 135 && angle < 225) {
-			actionCmd(Cmd.LEFT);
-		} else if (angle >= 225 && angle < 315) {
+		} else if (angle >= 112.5 && angle < 157.5) {
+			actionCmd(Cmd.FORWARD_LEFT);
+		} else if (angle >= 157.5 && angle < 202.5) {
+			actionCmd(Cmd.ORIGIN_LEFT);
+		} else if (angle >= 202.5 && angle < 247.5) {
+			actionCmd(Cmd.BACK_LEFT);
+		} else if (angle >= 247.5 && angle < 292.5) {
 			actionCmd(Cmd.BACK);
+		} else if (angle >= 292.5 && angle < 337.5) {
+			actionCmd(Cmd.BACK_RIGHT);
 		} else {
-			actionCmd(Cmd.RIGHT);
+			actionCmd(Cmd.ORIGIN_RIGHT);
 		}
 	}
 	
@@ -122,7 +130,13 @@ public class TouchBallView extends SurfaceView implements SurfaceHolder.Callback
 				break;
 				
 			case MotionEvent.ACTION_UP:
-				actionCmd(Cmd.STOP);
+			case MotionEvent.ACTION_CANCEL:
+				mBaseActivity.mHandler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						actionCmd(Cmd.STOP);
+					}
+				}, 100);
 				this.animThread = new animBallThread(this.ballX, this.ballY);
 				this.animThread.start();
 				break;

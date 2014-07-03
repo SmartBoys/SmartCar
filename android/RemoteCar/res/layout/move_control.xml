@@ -9,6 +9,34 @@
         android:layout_height="fill_parent"
         android:layout_centerInParent="true" />
 
+    <Button
+        android:id="@+id/btnLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/buttonss"
+        android:text="开灯"
+        android:textSize="20.0dip"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+    
+    <Button
+        android:id="@+id/btnFlashLight"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/buttonss"
+        android:text="开闪光灯"
+        android:textSize="20.0dip"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+    
     <ImageView
         android:id="@+id/img_power"
         android:layout_width="wrap_content"
