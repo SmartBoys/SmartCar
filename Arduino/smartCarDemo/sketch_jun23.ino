@@ -55,15 +55,15 @@ void loop() {
       analogWrite(ledPin, 255);
       analogWrite(rightPin,255);
    }  else if(tmp == 'y') {
-       analogWrite(backPin,0);
+      analogWrite(backPin,0);
       analogWrite(leftPin,255);
-       analogWrite(ledPin, 0);
+       analogWrite(ledPin, 255);
       analogWrite(rightPin,0);
    }  else if(tmp == 'z') {
        analogWrite(backPin,255);
       analogWrite(leftPin,0);
       analogWrite(ledPin, 0);
-      analogWrite(rightPin,0);
+      analogWrite(rightPin,255);
    }  else if(tmp == 'l') {
        analogWrite(backPin,255);
       analogWrite(leftPin,80);
